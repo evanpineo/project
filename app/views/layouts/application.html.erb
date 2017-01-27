@@ -21,7 +21,7 @@
         </div>
       </div>
       <div class="col-4 slogan">
-        MORE QUOTES!!!
+        MY MOVIE QUOTES
       </div>
       <div class="col-5 links">
         <%= link_to 'Contribute', '#' %>
@@ -30,9 +30,23 @@
     </header>
     
     <hr>
-    
     <br class="clear">
     
-    <%= yield %>
+    <div class="container">
+      <%= yield %>  
+    </div>
+    
+    <div class="footer">
+      <div class="container">
+        <div class="col-xs-6">
+          <%= link_to "Next quote >>", "#", class: 'next-quote' %>
+        </div>
+        <div class="col-xs-6 footer-blurb">
+          Brought to you in part by -TheMovies<br>
+          See more quotes here - <a href="http://www.imdb.com/list/ls000029269/">IMDB Top Movie Quotes</a>
+        </div>
+      </div>
+    </div>
+    
   </body>
 </html>
