@@ -26,8 +26,8 @@
         MY MOVIE QUOTES
       </div>
       <div class="col-5 links">
-        <%= link_to 'Contribute', new_quote_path %>
-        <%= link_to 'About', '#' %>
+        <%= link_to 'Add Quote', new_quote_path %>
+        <%= link_to 'About', about_path %>
       </div>
     </header>
     
@@ -35,7 +35,12 @@
     <br class="clear">
     
     <div class="container">
-      <%= yield %>  
+      <% if flash[:error].present? %>
+        <div class="col-10 offset-1 alert alert-danger">
+          <%= flash[:error].html_safe %>
+        </div>
+      <% end %>
+      <%= yield %> 
     </div>
     
     <div class="footer">
