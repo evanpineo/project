@@ -11,20 +11,22 @@
   <body>
     <header class="row">
       <div class="col-3">
-        <div class="circle">
-          <br>
-          NEW
-          <br>
-          QUOTES
-          <br>
-          HERE
-        </div>
+        <%= link_to root_path, class: 'logo' do %>
+          <div class="circle">
+            <br>
+            NEW
+            <br>
+            QUOTES
+            <br>
+            HERE
+          </div>
+        <% end %>
       </div>
       <div class="col-4 slogan">
         MY MOVIE QUOTES
       </div>
       <div class="col-5 links">
-        <%= link_to 'Contribute', '#' %>
+        <%= link_to 'Contribute', new_quote_path %>
         <%= link_to 'About', '#' %>
       </div>
     </header>
@@ -39,7 +41,7 @@
     <div class="footer">
       <div class="container">
         <div class="col-xs-6">
-          <%= link_to "Next quote >>", "#", class: 'next-quote' %>
+          <%= link_to "Next quote >>", root_path, class: 'next-quote' %>
         </div>
         <div class="col-xs-6 footer-blurb">
           Brought to you in part by -TheMovies<br>
