@@ -26,10 +26,33 @@
         MY MOVIE QUOTES
       </div>
       <div class="col-5 links">
-        <%= link_to 'Add Quote', new_quote_path %>
+        <%= link_to 'Add Quote', '#', data: {toggle: 'modal', target: '#myModal'} %>
         <%= link_to 'About', about_path %>
       </div>
     </header>
+    
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">x</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">Add Your Quote</h4>
+          </div>
+          <%= simple_form_for Quote.new do |f| %>
+            <div class="modal-body">
+              <%= f.input :saying %>
+              <%= f.input :author %>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <%= f.submit 'Create', class: 'btn btn-danger' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
     
     <hr>
     <br class="clear">
@@ -45,12 +68,14 @@
     
     <div class="footer">
       <div class="container">
-        <div class="col-xs-6">
-          <%= link_to "Next quote >>", root_path, class: 'next-quote' %>
-        </div>
-        <div class="col-xs-6 footer-blurb">
-          Brought to you in part by -TheMovies<br>
-          See more quotes here - <a href="http://www.imdb.com/list/ls000029269/">IMDB Top Movie Quotes</a>
+        <div class="row">
+          <div class="col-6">
+            <%= link_to "Next quote >>", root_path, class: 'next-quote' %>
+          </div>
+          <div class="col-6 footer-blurb">
+            Brought to you in part by - EP<br>
+            See more quotes here - <a href="http://www.imdb.com/list/ls000029269/">IMDB Top Movie Quotes</a>
+          </div>
         </div>
       </div>
     </div>
