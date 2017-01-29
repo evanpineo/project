@@ -5,6 +5,11 @@
   clear: both;
 }
 
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 h1 {
   font-family: 'Raleway', sans-serif;
   font-size: 48px;
@@ -14,7 +19,6 @@ h2 {
   font-family: 'exoextrabold';
   font-weight: 800;
   letter-spacing: 1.5px;
-  padding-left: 60px;
   padding-top: 30px;
 }
 
