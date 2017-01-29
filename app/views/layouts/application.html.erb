@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Myapp</title>
+    <title>Splurty</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -22,11 +23,12 @@
           </div>
         <% end %>
       </div>
-      <div class="col-4 slogan">
+      <div class="col col-sm-4 hidden-xs-down slogan">
         MY MOVIE QUOTES
       </div>
-      <div class="col-5 links">
+      <div class="col-10 offset-1 offset-sm-0 col-sm-5 links">
         <%= link_to 'Add Quote', '#', data: {toggle: 'modal', target: '#myModal'} %>
+        &nbsp;&nbsp;
         <%= link_to 'About', about_path %>
       </div>
     </header>
@@ -42,8 +44,9 @@
           </div>
           <%= simple_form_for Quote.new do |f| %>
             <div class="modal-body">
-              <%= f.input :saying %>
-              <%= f.input :author %>
+              <%= f.input :saying, label: "Add your quote here", placeholder: "ex: Get to the choppa!" %>
+              <br>
+              <%= f.input :author, label: "Who said this?", placeholder: "ex: Arnold" %>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -69,10 +72,13 @@
     <div class="footer">
       <div class="container">
         <div class="row">
-          <div class="col-6">
+          <div class="col-12 col-sm-6">
             <%= link_to "Next quote >>", root_path, class: 'next-quote' %>
           </div>
-          <div class="col-6 footer-blurb">
+          <br>
+          <br>
+          <br>
+          <div class="col-12 col-sm-6 footer-blurb">
             Brought to you in part by - EP<br>
             See more quotes here - <a href="http://www.imdb.com/list/ls000029269/">IMDB Top Movie Quotes</a>
           </div>
