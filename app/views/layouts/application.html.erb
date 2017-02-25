@@ -2,11 +2,10 @@
 <html>
   <head>
     <title>Splurty</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
@@ -14,12 +13,7 @@
       <div class="col-3">
         <%= link_to root_path, class: 'logo' do %>
           <div class="circle">
-            <br>
-            NEW
-            <br>
-            QUOTES
-            <br>
-            HERE
+            <br>NEW<br>QUOTES<br>HERE
           </div>
         <% end %>
       </div>
